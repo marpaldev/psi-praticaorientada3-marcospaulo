@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+pratica-orientada-03.pdf
+biblioteca.db

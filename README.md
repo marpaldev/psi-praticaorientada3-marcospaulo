@@ -1,1 +1,0 @@
-# psi-praticaorientada3-marcospaulo

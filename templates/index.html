@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+    <h1>Biblioteca</h1>
+
+    <h2>Lista de usuários:</h2>
+
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{usuario.nome}}, {{usuario.email}}</li>
+            {% else %}
+            <li>Ainda não tem nenhum usuário.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Lista de livros:</h2>
+
+    <ul>
+        {% for livro in livros %}
+            {% for usuario in usuarios %}
+                <li>{{livro.titulo}}, Usuário: {{usuario.nome}}</li>
+            {% endfor %}
+            {% else %}
+            <li>Ainda não tem nenhum livro.</li>
+        {% endfor %}
+    </ul>
+
+    <span><a href="{{ url_for('form_usuario') }}">Adicionar usuario</a></span>
+    <span><a href="{{ url_for('form_livro' ) }}">Adicionar livro</a></span>
+{% endblock %}
